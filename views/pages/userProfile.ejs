@@ -1,0 +1,31 @@
+<%- include('../partials/header') %> 
+<title>User Profile</title>
+<style>
+    html, body {
+        margin: 0%;
+        height: 100%;
+    }
+    .background {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        min-width: 100%;
+        min-height: 100%;
+    }
+</style>
+</head>
+<body class="bg-dark text-light">
+    <img src="<%=profile.backgroundPic%>" alt="backgroundPic" class="background-pic"><br>
+    <img src="<%=profile.profilePic%>" alt="profilePic" class="profilePic">
+<h1><%=profile.name%> </h1>
+<h2><%=profile.userName%> </h2>
+<h3><%= profile.dob %> </h3>
+<ul>
+    <% for( let index = 0; index < profile.posts.length; index++ ) { %>
+        <li><%=profile.posts[index]%>  </li>
+    <% } %>
+</ul>
+<form action="/<%=profile._id%>/logout" method="GET">
+    <button type="submit">Logout</button>
+</form>
+<%- include('../partials/footer') %> 

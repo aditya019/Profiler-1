@@ -1,0 +1,59 @@
+<%- include('../partials/header') %> 
+<style>
+    .overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    }
+    h1 {
+        font-size: 7rem;
+        letter-spacing: 1rem;
+        background-image: url(https://images.unsplash.com/photo-1619863182792-ff9b20a5f886?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .inp {
+        border-radius: 3px;
+        background-color: aquamarine;
+    }
+    label {
+        font-size: larger;
+        letter-spacing: 0.25rem;
+    }
+</style>
+<title>Login</title>
+</head>
+<body>
+<div class="bg-dark overlay">
+    <div class="m-5 p-5">
+        <h1 class="text-light">Login : </h1>
+        <form action="/login" method="post" class="text-light">
+        <div class="mb-3 mt-5">
+            <label for="userName">Username : </label>
+            <input type="text" name="userName" id="userName" class="inp"><br>
+        </div>
+        <div class="mb-3">
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password" class="inp"><br>
+        </div>
+        <input type="checkbox" onclick="myFunc()" class="form-check-input"> Show Password <br>
+        <button type="submit" class="m-3 btn btn-success">Login</button>
+    </form>
+    <a href="/" class="btn btn-primary">Homepage</a>
+    </div>
+</div>
+<script>
+    function myFunc() {
+        const x = document.getElementById('password');
+        if(x.type === 'password') {
+            x.type = 'text';
+        } else {
+            x.type = 'password';
+        }
+    }
+</script>
+<%- include('../partials/footer') %> 

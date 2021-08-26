@@ -1,0 +1,30 @@
+<%- include('../partials/header') %> 
+<style>
+    .overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+h1 {
+        font-size: 7rem;
+        letter-spacing: 1rem;
+        background-image: url(https://images.unsplash.com/photo-1619863182792-ff9b20a5f886?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+<title>About Us</title>
+</head>
+<body>
+<div class="bg-dark overlay">
+    <h1 class="text-light p-5 m-5">About Us</h1>
+    <h3 class="text-light m-5">Using this website you can create your profile , add posts and also view profiles of other people</h3>
+    <div class="m-5">
+        <a href="/" class="btn btn-primary">Homepage</a>
+    </div>
+</div>
+<%- include('../partials/footer') %> 

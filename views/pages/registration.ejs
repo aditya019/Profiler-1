@@ -1,0 +1,67 @@
+<%- include('../partials/header') %> 
+<style>
+    .overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    }
+    h1 {
+        font-size: 7rem;
+        letter-spacing: 1rem;
+        background-image: url(https://images.unsplash.com/photo-1619863182792-ff9b20a5f886?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    label {
+        font-size: larger;
+        letter-spacing: 0.25rem;
+    }
+    input {
+        border-radius: 3px;
+        background-color: aquamarine;
+    }
+</style>
+<title>Register</title>
+</head>
+<body>
+<div class="overlay bg-dark">
+    <div class="m-5 p-5">
+        <h1 class="text-light">New Profile</h1>
+    <form action="/registration" method="POST" class="text-light">
+    <div class="mb-3 mt-5">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="profile[name]" required>
+        <label for="email">Email: </label>
+        <input type="text" name="profile[email]" id="email" required><br>
+    </div>
+    <div class="mb-3">
+        <label for="userName">Username: </label>
+        <input type="text" name="profile[userName]" id="userName" required>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" name="profile[dob]" id="dob" required><br>
+    </div>
+    <div class="mb-3">
+        <label for="password">Password: </label>
+        <input type="password" name="profile[password]" id="password" required><br>
+    </div>
+    <input type="checkbox" onclick="myFunc()">Show Password <br>
+    <button type="submit" class="btn btn-success m-3">Register Profile</button>
+</form>
+<a href="/" class="btn btn-primary m-3">Homepage</a>
+    </div>
+</div>
+<script>
+    const myFunc = () => {
+        const x = document.getElementById('password');
+        if(x.type === 'password') {
+            x.type = 'text';
+        } else {
+            x.type = 'password';
+        }
+    }
+</script>
+<%- include('../partials/footer') %> 
